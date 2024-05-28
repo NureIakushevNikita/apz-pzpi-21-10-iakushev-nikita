@@ -1,0 +1,63 @@
+/* ShiftsPage.css */
+
+.shifts-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.shifts-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.generate-shifts-button {
+    background-color: #4CAF50; /* Зеленый */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.generate-shifts-button:hover {
+    background-color: #45a049;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+}
+
+.toggle label {
+    margin-right: 10px;
+}
+
+.shifts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.shift {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #eeefff;
+}
+
+.shift h2 {
+    margin-bottom: 10px;
+}
+
+.shift p {
+    margin: 5px 0;
+}

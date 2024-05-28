@@ -1,0 +1,52 @@
+.admin-users-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.admin-users-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.admin-users-page table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-users-page th, .admin-users-page td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.admin-users-page th {
+    background-color: #efeeff;
+}
+
+.admin-users-page tr:nth-child(even) {
+    background-color: #efeeff;
+}
+
+button.export-button {
+    background-color: #50e757;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+button.export-button img {
+    margin-right: 10px;
+}
+
+button.export-button:hover {
+    background-color: #3bc241;
+}

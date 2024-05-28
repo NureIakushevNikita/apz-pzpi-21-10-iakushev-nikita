@@ -1,0 +1,59 @@
+.workers-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.workers-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.workers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.worker-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #efeeff;
+}
+
+.worker-card:hover{
+    background-color: #e5e4ff;
+}
+
+.worker-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.worker-details p {
+    margin: 10px 0;
+    border-bottom: 2px solid #ccc;
+}
+
+.worker-details p strong {
+    margin-right: 5px;
+}
+
+.add-worker-button {
+    display: block;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto;
+}
+
+

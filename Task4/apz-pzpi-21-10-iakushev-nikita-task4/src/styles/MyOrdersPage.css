@@ -1,0 +1,45 @@
+.my-orders-page {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 24px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.my-orders-page h1 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.my-orders-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.my-orders-page table th,
+.my-orders-page table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.my-orders-page table th {
+    background-color: #efeeff;
+    color: #333;
+}
+
+.my-orders-page table tr:nth-child(even) {
+    background-color: #efeeff;
+}
+
+.my-orders-page table tr:hover {
+    background-color: #dfdeff;
+}
+
+.my-orders-page table tr td:last-child {
+    text-align: right;
+}

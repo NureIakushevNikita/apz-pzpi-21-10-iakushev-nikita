@@ -1,0 +1,31 @@
+.mall-chain-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.mall-chain-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mall-chains {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.mall-chain {
+    display: block;
+    padding: 16px;
+    border: 1px solid #3d3e48;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    background: #e8ebff;
+}
+
+.mall-chain:hover {
+    background-color: #ccd1ee;
+}

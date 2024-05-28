@@ -1,0 +1,44 @@
+.my-shifts-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.my-shifts-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.toggle label {
+    margin-right: 10px;
+}
+
+.shifts-list {
+    display: grid;
+    gap: 20px;
+}
+
+.shift {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #eeefff;
+    margin-bottom: 20px;
+}
+
+
+.shift p {
+    margin: 0;
+}
+
+.shift p strong {
+    font-weight: bold;
+    margin-right: 5px;
+}

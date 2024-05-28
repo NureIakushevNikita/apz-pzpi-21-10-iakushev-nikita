@@ -1,0 +1,35 @@
+/* MallsPage.css */
+
+.malls-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.malls-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.malls-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mall-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: #000000;
+    background-color: #e8ebff;
+}
+
+.mall-item:hover {
+    background-color: #ccd1ee;
+}
+
+.mall-item h2 {
+    margin-top: 0;
+}

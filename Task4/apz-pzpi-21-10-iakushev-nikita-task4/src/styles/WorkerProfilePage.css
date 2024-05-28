@@ -1,0 +1,40 @@
+.worker-profile-page {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 24px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.worker-profile-page h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.worker-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.worker-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.worker-profile-details {
+    text-align: left;
+}
+
+.worker-profile-details p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+
+}

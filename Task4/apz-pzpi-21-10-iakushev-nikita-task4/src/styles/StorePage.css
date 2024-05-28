@@ -1,0 +1,32 @@
+.store-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.store-page h1 {
+    text-align: center;
+}
+
+.stores-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.store-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #e8ebff;
+    text-decoration: none;
+    color: #000000;
+}
+
+.store-item:hover {
+    background-color: #ccd1ee;
+}
+
+.store-item h2 {
+    margin-top: 0;
+}

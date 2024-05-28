@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #59586b;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+.navbar img {
+    max-height: 32px;
+}
+
+.navbar a.active {
+    background-color: #797891;
+}
+
+.navbar a:hover {
+    background-color: #797891;
+}
+
+.navbar a:last-child {
+    margin-right: 0;
+}
