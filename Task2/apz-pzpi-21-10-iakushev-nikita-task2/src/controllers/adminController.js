@@ -32,3 +32,22 @@ exports.createAdmin = async (req, res) => {
         res.status(500).json({ message: 'Error creating admin', error: error.message });
     }
 };
+
+exports.getMallIdByAdminId = async (req, res) => {
+    const { adminId } = req.params;
+
+    try {
+        const admin = await Admin.findByPk(adminId, {
+            attributes: ['mall_id']
+        });
+
+        if (!admin) {
+            return res.status(404).json({ message: 'Admin not found' });
+        }
+
+        res.status(200).json({ mall_id: admin.mall_id });
+    } catch (error) {
+        console.error('Error fetching mall_id:', error);
+        res.status(500).json({ message: 'Failed to fetch mall_id', error: error.message });
+    }
+};

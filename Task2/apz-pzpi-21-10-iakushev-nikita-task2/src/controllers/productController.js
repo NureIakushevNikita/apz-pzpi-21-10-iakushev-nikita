@@ -111,7 +111,8 @@ exports.getProductById = async (req, res) => {
             price,
             quantity: product.quantity,
             photo: product.photo,
-            description
+            description,
+            store_id: product.store_id
         };
 
         res.status(200).json(formattedProduct);

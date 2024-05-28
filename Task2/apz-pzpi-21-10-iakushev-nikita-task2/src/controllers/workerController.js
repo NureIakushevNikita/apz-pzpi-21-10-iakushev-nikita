@@ -2,6 +2,7 @@ const Worker = require('../models/Worker');
 const Store = require('../models/Store')
 const {hash} = require("bcrypt");
 const {Op} = require("sequelize");
+const {verify} = require("jsonwebtoken");
 
 exports.createWorker = async (req, res) => {
     const { email, password, name, lastname, phone_number, photo, store_id, wage_per_hour, wage_currency } = req.body;
@@ -94,5 +95,37 @@ exports.countWorkersByStoreId = async (req, res) => {
     } catch (error) {
         console.error('Error counting workers in store:', error);
         res.status(500).json({ message: 'Failed to count workers', error: error.message });
+    }
+};
+
+exports.getWorkerProfileFromToken = async (req, res) => {
+    const token = req.headers.authorization?.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ message: 'Token not provided' });
+    }
+
+    try {
+        const decodedToken = verify(token, 'secretKey');
+
+        const worker = await Worker.findByPk(decodedToken.userId);
+        if (!worker) {
+            return res.status(404).json({ message: 'Worker not found' });
+        }
+
+        res.status(200).json({
+            id: worker.id,
+            email: worker.email,
+            name: worker.name,
+            lastname: worker.lastname,
+            phone_number: worker.phone_number,
+            photo: worker.photo,
+            store_id: worker.store_id,
+            wage_per_hour_USD: worker.wage_per_hour_USD,
+            wage_per_hour_UAH: worker.wage_per_hour_UAH,
+        });
+    } catch (error) {
+        console.error('Error decoding token:', error);
+        res.status(500).json({ message: 'Token decoding failed', error: error.message });
     }
 };

@@ -1,7 +1,7 @@
 const Shift = require('../models/Shift');
 const Store = require('../models/Store')
 const Worker = require('../models/Worker')
-const { addDays, format } = require('date-fns');
+const { addDays, format, startOfDay} = require('date-fns');
 const {Op} = require("sequelize");
 
 exports.createShift = async (req, res) => {
@@ -138,6 +138,49 @@ exports.getWorkerCountInStoreByDate = async (req, res) => {
     } catch (error) {
         console.error('Error getting worker count in store by date:', error);
         res.status(500).json({ message: 'Error getting worker count in store by date', error: error.message });
+    }
+};
+
+exports.getShiftsByWorkerId = async (req, res) => {
+    const { workerId } = req.params;
+
+    try {
+        const shifts = await Shift.findAll({
+            where: {
+                worker_id: workerId
+            },
+            order: [['id', 'ASC']]
+        });
+
+        if (shifts.length > 1) {
+            res.status(200).json(shifts.slice(1));
+        } else {
+            res.status(200).json([]);
+        }
+    } catch (error) {
+        console.error('Error fetching shifts by worker id:', error);
+        res.status(500).json({ message: 'Failed to fetch shifts', error: error.message });
+    }
+};
+
+exports.getFutureShiftsByWorkerId = async (req, res) => {
+    const { workerId } = req.params;
+    const currentDate = startOfDay(new Date());
+
+    try {
+        const futureShifts = await Shift.findAll({
+            where: {
+                worker_id: workerId,
+                start_time: {
+                    [Op.gt]: currentDate
+                }
+            }
+        });
+
+        res.status(200).json(futureShifts);
+    } catch (error) {
+        console.error('Error fetching future shifts by worker id:', error);
+        res.status(500).json({ message: 'Failed to fetch future shifts', error: error.message });
     }
 };
 

@@ -88,3 +88,22 @@ exports.getAllMalls = async (req, res) => {
         res.status(500).json({ message: 'Error fetching malls', error: error.message });
     }
 };
+
+exports.getMallsByChainId = async (req, res) => {
+    const { mallChainId } = req.params;
+
+    try {
+        const malls = await Mall.findAll({
+            where: { mall_chain_id: mallChainId }
+        });
+
+        if (!malls || malls.length === 0) {
+            return res.status(404).json({ message: 'Malls not found for the given mall chain id' });
+        }
+
+        res.status(200).json(malls);
+    } catch (error) {
+        console.error('Error fetching malls by chain id:', error);
+        res.status(500).json({ message: 'Error fetching malls by chain id', error: error.message });
+    }
+};

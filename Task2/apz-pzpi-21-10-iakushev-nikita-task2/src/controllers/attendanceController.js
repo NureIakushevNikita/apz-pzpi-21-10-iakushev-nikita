@@ -1,5 +1,7 @@
 const Attendance = require('../models/Attendance');
 const {Op} = require("sequelize");
+const {addDays, eachDayOfInterval, startOfDay, endOfDay} = require("date-fns");
+const {format} = require("mysql2");
 
 exports.createAttendance = async (req, res) => {
     const { user_id, store_id, entry_time, exit_time } = req.body;
@@ -179,3 +181,42 @@ exports.analyzeAttendance = async (req, res) => {
     }
 };
 
+exports.getDailyVisitsByStoreInRange = async (req, res) => {
+    const { storeId, dateFrom, dateTo } = req.params;
+
+    try {
+        const startDate = new Date(dateFrom);
+        const endDate = new Date(dateTo);
+
+        const startDateWithOffset = addDays(startDate, 1);
+        const endDateWithOffset = addDays(endDate, 1);
+
+        const daysArray = eachDayOfInterval({ start: startDateWithOffset, end: endDateWithOffset });
+
+        const attendanceCounts = await Promise.all(
+            daysArray.map(async (day) => {
+                const dayStart = startOfDay(day);
+                const dayEnd = endOfDay(day);
+
+                const count = await Attendance.count({
+                    where: {
+                        store_id: storeId,
+                        entry_time: {
+                            [Op.between]: [dayStart, dayEnd]
+                        }
+                    }
+                });
+
+                return {
+                    date: new Date(day),
+                    visits: count
+                };
+            })
+        );
+
+        res.status(200).json(attendanceCounts);
+    } catch (error) {
+        console.error('Error getting daily visits by store in range:', error);
+        res.status(500).json({ message: 'Failed to get daily visits by store in range', error: error.message });
+    }
+};
