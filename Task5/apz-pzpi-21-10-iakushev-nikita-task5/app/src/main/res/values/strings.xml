@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name" translatable="false">Task5</string>
+    <string name="title_activity_home" translatable="false">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_orders">Orders</string>
+    <string name="title_shifts">Shifts</string>
+    <string name="title_login">Login</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="your_profile">Your profile</string>
+    <string name="email">Email: %1$s</string>
+    <string name="phone">Phone number: %1$s</string>
+    <string name="wage_hour">Wage: $%1$o/hour</string>
+    <string name="store">Store: %1$s</string>
+    <string name="done">Done</string>
+    <string name="name">Name %1$s</string>
+    <string name="lastname">Lastname %1$s</string>
+    <string name="id">ID: %1$o</string>
+    <string name="date_order">Date: %1$s</string>
+    <string name="order_type">Order Type: %1$s</string>
+    <string name="address">Address: %1$s</string>
+    <string name="state">Order state: %1$s</string>
+    <string name="date_shift">Date: %1$s</string>
+    <string name="start_time">Start: %1$s</string>
+    <string name="end_time">End: %1$s</string>
+    <string name="all_shifts">All Shifts</string>
+    <string name="future_shifts">Future Shifts</string>
+    <string name="login_ok_message">Login succesful!</string>
+    <string name="login_err_message">Login failed!</string>
+    <string name="change_order_state_err">Failed to update order state.</string>
+    <string name="change_order_state_ok">Order state changed!</string>
+    <string name="log_out_message">You logged out!</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home">Головна</string>
+    <string name="title_orders">Замовлення</string>
+    <string name="title_shifts">Зміни</string>
+    <string name="title_login">Авторизація</string>
+    <string name="email_hint">Електронна пошта</string>
+    <string name="password_hint">Password</string>
+    <string name="your_profile">Ваш профіль</string>
+    <string name="email">Електронна пошта: %1$s</string>
+    <string name="phone">Номер телефону: %1$s</string>
+    <string name="wage_hour">Зарплатня: $%1$o/година</string>
+    <string name="store">Магазин: %1$s</string>
+    <string name="done">Виконано</string>
+    <string name="name">Ім`я %1$s</string>
+    <string name="lastname">Прізвище %1$s</string>
+    <string name="id">Номер замовлення: %1$o</string>
+    <string name="date_order">Дата замовлення: %1$s</string>
+    <string name="order_type">Тип замовлення: %1$s</string>
+    <string name="address">Адреса: %1$s</string>
+    <string name="state">Стан замовлення: %1$s</string>
+    <string name="date_shift">Дата зміни: %1$s</string>
+    <string name="start_time">Початок зміни: %1$s</string>
+    <string name="end_time">Кінець зміни: %1$s</string>
+    <string name="all_shifts">За весь час</string>
+    <string name="future_shifts">Майбутні зміни</string>
+    <string name="login_ok_message">Авторизація успішна!</string>
+    <string name="login_err_message">Помилка при авторизації!</string>
+    <string name="change_order_state_err">Помилка під час зміни статусу замовлення.</string>
+    <string name="change_order_state_ok">Статус замовлення змінено!</string>
+    <string name="log_out_message">Ви вийшли!</string>
+</resources>
